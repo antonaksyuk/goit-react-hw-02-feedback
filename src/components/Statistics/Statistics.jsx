@@ -1,4 +1,6 @@
 import { Component } from "react";
+import PropTypes from 'prop-types'
+
 import style from './Statistics.module.css'
 
 
@@ -23,6 +25,10 @@ export default class Statistics extends Component {
                 <p>Positive feedback: {this.props.positivePercentage()}%</p>
             </div>
         );
-    }
+}}
 
+Statistics.propTypes = {
+    data: PropTypes.object.isRequired,
+    total: PropTypes.func.isRequired,
+    positivePercentage: PropTypes.func.isRequired,
 }

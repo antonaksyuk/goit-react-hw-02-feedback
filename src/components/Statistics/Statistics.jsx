@@ -14,10 +14,8 @@ export default class Statistics extends Component {
     render() {
         return (
             <div className={style.statisticsBlock}>
-                <h2>Statistics</h2>
                 {this.convertToArray().map(elm => {
                     return (
-                       
                         <p key={elm.name}>{elm.name.toUpperCase()}: {elm.value}</p>
                     )
                 })}

@@ -32,15 +32,18 @@ export class App extends Component{
 
   render() {
     return (
-      <Section title='Please leave feedback'>
-        <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleButtonClic} />
-        {this.countValue() ? (
-          <Statistics data={this.state} total={this.countValue} positivePercentage={this.countPositiveFeedback} />
-        ) : (
-          <p>There is no feedback</p>
-        )}
-      </Section>
-    );  
+      <>
+        <Section title='Please leave feedback'>
+          <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleButtonClic} />
+        </Section>
+        <Section title='Statistics'>
+          {this.countValue() ? (
+            <Statistics data={this.state} total={this.countValue} positivePercentage={this.countPositiveFeedback} />
+          ) : (
+            <p>There is no feedback</p>
+          )
+          } </Section>
+      </>
+    );
   }
-  
-};
+  };

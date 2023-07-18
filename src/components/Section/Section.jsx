@@ -9,7 +9,7 @@ export default class Section extends Component {
         const { children, title } = this.props;
         return (
             <div className={style.section}>
-                <h1 className={style.title}>{title}</h1>
+                <h2 className={style.title}>{title}</h2>
                 {children}
             </div>
         )
